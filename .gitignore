@@ -1,0 +1,23 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+# dotenv environment variables file
+.env
+.env.test
+
+# Custom ignored files
+package-lock.json
+yarn.lock
+.vs/
+dist/
+node_modules/
+temp/
+.vscode/settings.json
