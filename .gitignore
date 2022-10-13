@@ -12,6 +12,7 @@ dist
 # dotenv environment variables file
 .env
 .env.test
+ormconfig.ts
 
 # Custom ignored files
 package-lock.json

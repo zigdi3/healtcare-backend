@@ -6,9 +6,9 @@ const config: ConnectionOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
-  username: 'adminodapp',
-  password: 'odappServer',
-  database: 'QAS',
+  username: 'USERNAME',
+  password: 'PASSWORD',
+  database: 'DB_TEST',
   logging: true,
   entities: [`src/infra/adapters/entities/*.${process.env.ENV === "local" ? "ts" : "js"}`],
   // We are using migrations, synchronize should be set to false.
@@ -18,7 +18,7 @@ const config: ConnectionOptions = {
   synchronize: true,
   migrationsRun: false,
   migrations: ['dist/**/migrations/*.js'],
-  migrationsTableName: 'MigrationsOdapp',
+  migrationsTableName: 'MigrationsTable',
   cli: {
     migrationsDir: 'src/infra/adapters/typeorm/migrations',
   },
