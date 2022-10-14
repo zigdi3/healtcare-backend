@@ -9,7 +9,7 @@ const config: ConnectionOptions = {
   username: 'adminodapp',
   password: 'odappServer',
   database: 'QAS',
-  logging: true,
+  logging: false,
   entities: [`src/infra/adapters/entities/*.${process.env.ENV === "local" ? "ts" : "js"}`],
   // We are using migrations, synchronize should be set to false.
   // synchronize: process.env.TYPEORM_SYNCHRONIZE
