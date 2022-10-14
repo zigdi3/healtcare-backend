@@ -1,0 +1,95 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API-Enfermagem",
+    "description": "API Enfermagem ODAPP",
+    "contact": {
+      "name": "Sistema Enfermagem",
+      "url": "https://www.enfermagem.com.br",
+      "email": "suporte@enfermagem.com.br"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8085/api",
+      "description": "LOCAL Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Paciente",
+      "description": "Endpoints relacionados a Paciente"
+    }
+  ],
+  "paths": {
+    "/paciente": {
+      "get": {
+        "tags": [
+          "Paciente"
+        ],
+        "summary": "Retorna Paciente",
+        "description": "Retorna Pacientes cadastrados no sistema",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/getPacienteResponse"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {},
+    "requestBodies": {
+      "getPacienteResponse": {
+        "description": "Sucesso",
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "Paciente": {
+                      "$ref": "#/components/schemas/Paciente"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "schemas": {
+    "Paciente": {
+      "properties": {
+        "nome": {
+          "type": "string",
+          "example": "Mick Jagger Santanna"
+        },
+        "idade": {
+          "type": "number",
+          "example": "44"
+        },
+        "dataCadastro": {
+          "type": "string",
+          "example": "2022-04-23T18:04:10.395Z"
+        },
+        "cidade": {
+          "type": "string",
+          "example": "Venda Nova"
+        },
+        "estado": {
+          "type": "string",
+          "example": "Minas Gerais"
+        },
+        "inseridoEm": {
+          "type": "string",
+          "example": "2022-04-23T18:04:10.395Z"
+        }
+      }
+    }
+  }
+}

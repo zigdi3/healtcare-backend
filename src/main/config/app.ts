@@ -6,5 +6,5 @@ import setupRoutes from './routes'
 const app = express()
 setupSwagger(app)
 setupMiddlewares(app)
-setupRoutes(app)
+void setupRoutes(app)
 export default app
