@@ -23,13 +23,94 @@
     }
   ],
   "paths": {
-    "/paciente": {
+    "/paciente/encontrar/{id}": {
       "get": {
         "tags": [
           "Paciente"
         ],
         "summary": "Retorna Paciente",
         "description": "Retorna Pacientes cadastrados no sistema",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/getPacienteResponse"
+          }
+        }
+      }
+    },
+    "/paciente/casdatrar": {
+      "post": {
+        "tags": [
+          "Paciente"
+        ],
+        "summary": "Cadastra novo Paciente",
+        "description": "Cadastra novo Paciente no sistema",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PacienteRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/getPacienteResponse"
+          }
+        }
+      }
+    },
+    "/paciente/atualizar/{id}": {
+      "put": {
+        "tags": [
+          "Paciente"
+        ],
+        "summary": "Atualiza Paciente",
+        "description": "Atualiza dados do Paciente no sistema",
+        "parameters": [
+          {
+            "name": "pacienteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/pacienteRequest"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/getPacienteResponse"
+          }
+        }
+      }
+    },
+    "/paciente/excluir": {
+      "delete": {
+        "tags": [
+          "Paciente"
+        ],
+        "summary": "Exclui Paciente",
+        "description": "Excluir Paciente do sistema",
+        "parameters": [
+          {
+            "name": "pacienteId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/pacienteRequest"
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/getPacienteResponse"
@@ -39,55 +120,80 @@
     }
   },
   "components": {
-    "responses": {},
-    "requestBodies": {
+    "responses": {
       "getPacienteResponse": {
         "description": "Sucesso",
         "content": {
           "application/json": {
             "schema": {
+              "type": "object",
               "properties": {
                 "data": {
-                  "type": "object",
-                  "properties": {
-                    "Paciente": {
-                      "$ref": "#/components/schemas/Paciente"
-                    }
-                  }
+                  "$ref": "#/components/schemas/paciente"
                 }
               }
             }
           }
         }
       }
-    }
-  },
-  "schemas": {
-    "Paciente": {
-      "properties": {
-        "nome": {
-          "type": "string",
-          "example": "Mick Jagger Santanna"
-        },
-        "idade": {
-          "type": "number",
-          "example": "44"
-        },
-        "dataCadastro": {
-          "type": "string",
-          "example": "2022-04-23T18:04:10.395Z"
-        },
-        "cidade": {
-          "type": "string",
-          "example": "Venda Nova"
-        },
-        "estado": {
-          "type": "string",
-          "example": "Minas Gerais"
-        },
-        "inseridoEm": {
-          "type": "string",
-          "example": "2022-04-23T18:04:10.395Z"
+    },
+    "requestBodies": {
+      "pacienteRequest": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "type": "string",
+                  "example": "Fernando Alonso"
+                },
+                "idade": {
+                  "type": "number",
+                  "example": "32"
+                },
+                "cidade": {
+                  "type": "string",
+                  "example": "Nova Lima"
+                },
+                "estado": {
+                  "type": "string",
+                  "example": "Minas Gerais"
+                }
+              }
+            }
+          }
+        }
+      },
+    },
+    "schemas": {
+      "paciente": {
+        "properties": {
+          "nome": {
+            "type": "string",
+            "example": "Mick Jagger Santanna"
+          },
+          "idade": {
+            "type": "number",
+            "example": "44"
+          },
+          "dataCadastro": {
+            "type": "string",
+            "example": "2022-04-23T18:04:10.395Z"
+          },
+          "cidade": {
+            "type": "string",
+            "example": "Venda Nova"
+          },
+          "estado": {
+            "type": "string",
+            "example": "Minas Gerais"
+          },
+          "inseridoEm": {
+            "type": "string",
+            "example": "2022-04-23T18:04:10.395Z"
+          }
         }
       }
     }
