@@ -1,12 +1,12 @@
-import { Entity } from "typeorm"
+import { Entity, PrimaryGeneratedColumn } from "typeorm"
 import { DbAwareColumn } from "../mapping-for-sqlite-helper"
 
-@Entity('Paciente', { schema: 'dbo' })
+@Entity('Paciente')
 export class Paciente {
-  @DbAwareColumn({ type: 'int', primary: true, name: 'Id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'Id' })
   id: number
 
-  @DbAwareColumn({ type: 'string', name: 'Nome', length: 150 })
+  @DbAwareColumn({ type: 'varchar', name: 'Nome', length: 150 })
   nome: string
 
   @DbAwareColumn({ type: 'int', name: 'Idade' })
@@ -15,13 +15,13 @@ export class Paciente {
   @DbAwareColumn({ type: 'date', name: 'DataCadastro' })
   dataCadastro: Date
 
-  @DbAwareColumn({ type: 'string', name: 'Cidade', length: 80 })
+  @DbAwareColumn({ type: 'varchar', name: 'Cidade', length: 80 })
   cidade: string
 
-  @DbAwareColumn({ type: 'string', name: 'Estado', length: 80 })
+  @DbAwareColumn({ type: 'varchar', name: 'Estado', length: 80 })
   estado: string
 
-  @DbAwareColumn({ type: 'datetime', name: 'InseridoEm' })
+  @DbAwareColumn({ type: 'date', name: 'InseridoEm', default: () => 'getdate()' })
   inseridoEm: Date
 
 }
