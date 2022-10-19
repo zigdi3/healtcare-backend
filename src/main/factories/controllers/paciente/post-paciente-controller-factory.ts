@@ -1,4 +1,4 @@
-import { Paciente } from "@/infra/adapters/typeorm/entities/Paciente";
+import { Paciente } from "@/infra/adapters/typeorm/entities/paciente";
 import { adaptRoute } from "@/main/adapters/express/express-route-adapter";
 import { PostPacienteController } from "@/presentation/controllers/paciente/post-paciente-controller";
 import { IController } from "@/presentation/protocols";

@@ -1,6 +1,6 @@
 
 import { InsertPaciente } from '@/data/use-case/paciente/insert-paciente'
-import { ICreatePaciente } from '@/domain/protocols/Paciente/insert-Paciente'
+import { ICreatePaciente } from '@/domain/protocols/paciente/insert-paciente'
 import { pacienteRepository } from '../repositories/paciente/paciente-repository-factory'
 
 const makeInsertPaciente = (): ICreatePaciente => {

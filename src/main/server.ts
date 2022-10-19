@@ -7,9 +7,8 @@ import env from './config/env'
 TypeOrmHelper.createConnection('default')
   .then(() => {
     server.listen(env.port, () => {
-      //console.log(`Ambiente ${env.databaseEnv.toUpperCase()}`)
 
-      console.log(`Server rodando em http://${env.serverhost}:${env.port}`)
+      console.log(`Server rodando em http://${env.serverHost}:${env.port}`)
     })
   })
   .catch(console.error)
