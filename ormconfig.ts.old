@@ -3,25 +3,33 @@ import { ConnectionOptions } from 'typeorm';
 
 // Check typeORM documentation for more information.
 const config: ConnectionOptions = {
-  type: 'postgres',
+  // config postresql DB
+  // type: 'postgres',
+  name: 'default',
   host: 'localhost',
-  port: 5432,
+  // port: 5432,
   username: 'adminodapp',
   password: 'odappServer',
-  database: 'QAS',
+  type: 'mysql',
+  port: 3306,
+  database: 'qas',
   logging: false,
-  entities: [`src/infra/adapters/entities/*.${process.env.ENV === "local" ? "ts" : "js"}`],
+  entities: [`${process.env.TS_NODE_DEV === undefined ? 'dist' : 'src'}/infra/adapters/typeorm/entities/*.{js,ts}`],
   // We are using migrations, synchronize should be set to false.
   // synchronize: process.env.TYPEORM_SYNCHRONIZE
   //  ? process.env.TYPEORM_SYNCHRONIZE.toLowerCase() === 'true'
   //  : false,
-  synchronize: true,
+  synchronize: false,
   migrationsRun: false,
-  migrations: ['dist/**/migrations/*.js'],
+  migrations: [`${process.env.TS_NODE_DEV === undefined ? 'dist' : 'src'}/infra/adapters/typeorm/migrations/*.{js,ts}`],
   migrationsTableName: 'MigrationsOdapp',
+
+
   cli: {
+    entitiesDir: 'src/infra/adapters/typeorm/entities',
     migrationsDir: 'src/infra/adapters/typeorm/migrations',
   },
+
 }
 
 module.exports = config;

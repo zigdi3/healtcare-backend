@@ -12,7 +12,7 @@ export class Paciente_1665694586590 implements MigrationInterface {
                     name: 'Id',
                     type: 'INTEGER',
                     isPrimary: true,
-                    isUnique: true,
+                    isGenerated: true,
                     generationStrategy: 'increment',
 
                 },
