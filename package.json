@@ -56,5 +56,11 @@
   },
   "_moduleAliases": {
     "@": "dist"
+  },
+  "private": true,
+  "workspaces": {
+    "nohoist": [
+      "module-alias"
+    ]
   }
 }
