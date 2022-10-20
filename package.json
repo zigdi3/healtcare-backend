@@ -8,7 +8,8 @@
     "node": "14.17"
   },
   "scripts": {
-    "start": "npm run build && cross-env && node dist/main/server.js",
+    "prestart": "npm run build",
+    "start": "npm run prestart && cross-env && node dist/main/server.js",
     "dev": "ts-node-dev --respawn --transpile-only --clear src/main/server.ts",
     "build": "rimraf dist/ && tsc -p tsconfig-build.json",
     "build-all": "rimraf dist/ && tsc -p tsconfig.json",
@@ -56,5 +57,11 @@
   },
   "_moduleAliases": {
     "@": "dist"
+  },
+  "private": true,
+  "workspaces": {
+    "nohoist": [
+      "module-alias"
+    ]
   }
 }
