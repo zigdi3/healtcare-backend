@@ -20,12 +20,16 @@
     "resolveJsonModule": true,
     "paths": {
       "@/*": [
-        "node_modules/*"
+        "*"
       ],
       "@test/*": [
         "../test/*"
       ]
     },
+  },
+  "tsc-alias": {
+    "verbose": false,
+    "resolveFullPaths": true,
   },
   "include": [
     "src",

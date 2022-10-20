@@ -8,7 +8,7 @@
     "node": "14.17"
   },
   "scripts": {
-    "heroku-postbuild": "rimraf dist/ && tsc -p tsconfig-build.json",
+    "heroku-postbuild": "rimraf dist/ && tsc-alias -p tsconfig-build.json",
     "start": "npm run build && cross-env && node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/main/server.js",
     "dev": "ts-node-dev --respawn --transpile-only --clear src/main/server.ts",
     "build": "rimraf dist/ && tsc -p tsconfig-build.json",
@@ -36,7 +36,6 @@
     "@types/node": "^18.7.15",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
-    "handlebars": "^4.7.7",
     "cross-env": "^7.0.3",
     "eslint": "^8.24.0",
     "eslint-config-standard-with-typescript": "^22.0.0",
@@ -46,10 +45,12 @@
     "eslint-plugin-standard": "^5.0.0",
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
+    "handlebars": "^4.7.7",
     "rimraf": "^3.0.2",
     "swagger-ui-express": "^4.5.0",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^1.1.8",
+    "tsc-alias": "^1.7.0",
     "typescript": "^4.8.4"
   },
   "_moduleAliases": {
