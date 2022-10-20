@@ -1,6 +1,6 @@
 import { IDbInsertPaciente } from '@/data/paciente/db-insert-paciente'
 import { IPacienteModel } from '@/domain/models/paciente'
-import { ICreatePaciente } from '@/domain/protocols/paciente/insert-paciente'
+import { ICreatePaciente } from '@/domain/protocols/paciente/insert-paciente_old'
 
 export class InsertPaciente implements ICreatePaciente {
   constructor(
