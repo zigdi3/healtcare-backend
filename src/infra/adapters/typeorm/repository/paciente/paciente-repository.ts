@@ -5,7 +5,7 @@ import { IDbUpdatePacienteById } from "@/data/paciente/db-update-paciente";
 import { IPacienteModel } from "@/domain/models/paciente";
 import { Brackets, getRepository, Repository } from "typeorm";
 import { Paciente } from "@/infra/adapters/typeorm/entities/paciente";
-import { pacienteMapToEntity, pacienteMapToModel, pacientesMapToModel } from "../../helpers/paciente-mapper_old";
+import { pacienteMapToEntity, pacienteMapToModel, pacientesMapToModel } from "../../helpers/paciente-mapper";
 
 
 export class PacienteRepository implements IDbInsertPaciente, IDbFindPaciente, IDbUpdatePacienteById, IDbDeletePaciente {

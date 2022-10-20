@@ -1,4 +1,4 @@
-import { ICreatePaciente } from '@/domain/protocols/paciente/insert-paciente_old'
+import { ICreatePaciente } from '@/domain/protocols/paciente/insert-paciente'
 import ErrorHandler from '@/presentation/http/error-handler'
 import { badRequest, ok } from '@/presentation/http/http-status'
 import { IController, IHttpRequest, IHttpResponse } from '@/presentation/protocols'
