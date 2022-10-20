@@ -1,4 +1,4 @@
-import { IPacienteModel } from '@/domain/models/paciente'
+import { IPacienteModel } from '@/domain/models/paciente_old'
 import { Paciente } from '../entities/paciente'
 
 export const pacienteMapToModel = (entity: Paciente): IPacienteModel => {
