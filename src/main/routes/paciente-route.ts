@@ -9,6 +9,4 @@ export default (router: Router): void => {
   router.post('/paciente/cadastrar', postPacienteController)
   router.put('/paciente/atualizar/:id', putPacienteController)
   router.delete('/paciente/excluir', deletePacienteController)
-
-
 }

@@ -1,21 +1,19 @@
-import { IDbDeletePaciente } from "@/data/paciente/db-delete-paciente"
-import { IDbFindPaciente } from "@/data/paciente/db-find-paciente"
-import { GenericBussinessError } from "@/domain/bussiness-error/generic-bussiness-error"
-import { IDeletePaciente } from "@/domain/protocols/paciente/delete-paciente"
+import { IDbDeletePaciente } from '@/data/paciente/db-delete-paciente'
+import { IDbFindPaciente } from '@/data/paciente/db-find-paciente'
+import { GenericBussinessError } from '@/domain/bussiness-error/generic-bussiness-error'
+import { IDeletePaciente } from '@/domain/protocols/paciente/delete-paciente'
 
 export class DeletePaciente implements IDeletePaciente {
-  constructor(
+  constructor (
     private readonly pacienteRepository: IDbDeletePaciente & IDbFindPaciente
   ) { }
 
-  async delete(pacienteId?: number): Promise<boolean> {
+  async delete (pacienteId?: number): Promise<boolean> {
     const paciente = await this.pacienteRepository.find(pacienteId)
     if (!paciente) {
       throw new GenericBussinessError('Paciente nao encontrado')
     }
 
-    const result = await this.pacienteRepository.delete(pacienteId)
-
-    return true
+    return !!await this.pacienteRepository.delete(pacienteId)
   }
 }

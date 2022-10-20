@@ -1,4 +1,4 @@
-import { IPacienteModel } from "@/domain/models/paciente";
+import { IPacienteModel } from '@/domain/models/paciente_old'
 
 export interface IDbFindPaciente {
   find: (id?: number) => Promise<IPacienteModel[]>

@@ -1,6 +1,6 @@
-import { IDbFindPaciente } from "@/data/paciente/db-find-paciente"
-import { IPacienteModel } from "@/domain/models/paciente"
-import { IFindPaciente } from "@/domain/protocols/paciente/find-paciente"
+import { IDbFindPaciente } from '@/data/paciente/db-find-paciente'
+import { IPacienteModel } from '@/domain/models/paciente_old'
+import { IFindPaciente } from '@/domain/protocols/paciente/find-paciente'
 
 export class FindPaciente implements IFindPaciente {
   constructor(

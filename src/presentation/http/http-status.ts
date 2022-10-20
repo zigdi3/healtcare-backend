@@ -23,12 +23,12 @@ export const multiStatus = (data: any): IHttpResponse => ({
 
 export const badRequest = (error: Error): IHttpResponse => ({
   statusCode: 400,
-  body: { error: error }
+  body: { error }
 })
 
 export const unauthorized = (error: Error = new UnauthorizedError()): IHttpResponse => ({
   statusCode: 401,
-  body: { error: error }
+  body: { error }
 })
 
 export const serverError500 = (serverError: ServerError): IHttpResponse => ({

@@ -14,7 +14,7 @@ export const adaptRoute = (controller: IController) => {
   }
 }
 
-function formatReqQueryParams(reqQuery: any): object {
+function formatReqQueryParams (reqQuery: any): object {
   const keys = Object.keys(reqQuery)
   for (const key of keys) {
     reqQuery[key] = typeof reqQuery[key] === 'string' ? (reqQuery[key].indexOf(',') > -1 ? reqQuery[key].split(',') : reqQuery[key] === 'true' ? true : reqQuery[key] === 'false' ? false : reqQuery[key]) : reqQuery[key]

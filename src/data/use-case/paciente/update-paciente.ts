@@ -1,8 +1,8 @@
-import { IDbFindPaciente } from "@/data/paciente/db-find-paciente"
-import { IDbUpdatePacienteById } from "@/data/paciente/db-update-paciente"
-import { GenericBussinessError } from "@/domain/bussiness-error/generic-bussiness-error"
-import { IPacienteModel } from "@/domain/models/paciente"
-import { IUpdatePacienteById } from "@/domain/protocols/paciente/update-paciente"
+import { IDbFindPaciente } from '@/data/paciente/db-find-paciente'
+import { IDbUpdatePacienteById } from '@/data/paciente/db-update-paciente'
+import { GenericBussinessError } from '@/domain/bussiness-error/generic-bussiness-error'
+import { IPacienteModel } from '@/domain/models/paciente_old'
+import { IUpdatePacienteById } from '@/domain/protocols/paciente/update-paciente'
 
 export class UpdatePaciente implements IUpdatePacienteById {
   constructor(
