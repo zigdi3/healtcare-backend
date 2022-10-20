@@ -9,6 +9,7 @@
   },
   "scripts": {
     "prestart": "npm run build",
+    "heroku-postbuild": "npm run build && rimraf dist/ && tsc -p tsconfig-build.json",
     "start": "npm run prestart && cross-env && node dist/main/server.js",
     "dev": "ts-node-dev --respawn --transpile-only --clear src/main/server.ts",
     "build": "rimraf dist/ && tsc -p tsconfig-build.json",
